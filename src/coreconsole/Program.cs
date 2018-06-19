@@ -26,7 +26,7 @@ namespace core_console
                 .FirstOrDefault()
                 ;
             Console.WriteLine("Latest registered out of active users: "
-                + $"{latestRegistered?.Name.First} {latestRegistered?.Name.Last}");
+                + $"{latestRegistered?.Name.FullName}");
 
             var fruitCounts = individuals
                 .GroupBy(x => x.FavoriteFruit)
@@ -60,7 +60,7 @@ namespace core_console
                     .FirstOrDefault(x => x.Id == "5aabbca3e58dc67745d720b1")
                 ;
             Console.WriteLine("Find individual by ID: "
-                + $"{findIndividual?.Name.First} {findIndividual?.Name.Last}");
+                + $"{findIndividual?.Name.FullName}");
         }
 
         private static IEnumerable<Individual> GetIndividuals()
